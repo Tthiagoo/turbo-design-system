@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button, ButtonProps } from '@mydesign/ui'
 
 import React from 'react'
+import { ArrowRight } from 'phosphor-react';
 
 const meta: Meta<typeof Button> = {
   title: 'Form/Button',
@@ -14,7 +15,7 @@ const meta: Meta<typeof Button> = {
   },
   argTypes: {
     variant: {
-      options: ['primary', 'secondary', 'tertiary','other'],
+      options: ['primary', 'secondary', 'tertiary'],
       control: {
         type: 'inline-radio',
       },
@@ -38,11 +39,7 @@ export default meta;
 
 type Story = StoryObj<typeof Button>;
 
-export const Unchecked: Story = {
-  args: {
-  variant: 'primary',
-  },
-};
+
 export const Primary: StoryObj<ButtonProps> = {
   args: {
     variant: 'primary',
@@ -64,12 +61,7 @@ export const Tertiary: StoryObj<ButtonProps> = {
   },
 }
 
-export const Other: StoryObj<ButtonProps> = {
-  args: {
-    variant: 'other',
-    children: 'Cancel',
-  },
-}
+
 
 export const Small: StoryObj<ButtonProps> = {
   args: {
@@ -79,7 +71,12 @@ export const Small: StoryObj<ButtonProps> = {
 
 export const WithIcon: StoryObj<ButtonProps> = {
   args: {
-    
+    children:(
+      <>
+      Proximo Passo
+      <ArrowRight/>
+      </>
+    )
   },
 }
 
